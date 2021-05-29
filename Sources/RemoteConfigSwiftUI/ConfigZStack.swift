@@ -24,9 +24,11 @@ extension ConfigZStack: SwiftUIConfigurable {
     @ViewBuilder
     public func toSwiftUI() -> some View {
         ZStack(alignment: alignment.toSwiftUI()) {
-            ForEach(value.indices) { index in
-                value[index].toSwiftUI()
-            }
+            AnyView(
+                ForEach(value.indices) { index in
+                    value[index].toSwiftUI()
+                }
+            )
         }
     }
 }

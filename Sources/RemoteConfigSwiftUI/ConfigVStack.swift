@@ -29,9 +29,11 @@ extension ConfigVStack: SwiftUIConfigurable {
     @ViewBuilder
     public func toSwiftUI() -> some View {
         VStack(alignment: alignment.toSwiftUI(), spacing: spacing) {
-            ForEach(value.indices) { index in
-                value[index].toSwiftUI()
-            }
+            AnyView(
+                ForEach(value.indices) { index in
+                    value[index].toSwiftUI()
+                }
+            )
         }
     }
 }

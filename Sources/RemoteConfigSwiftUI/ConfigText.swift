@@ -20,19 +20,3 @@ public extension ConfigText {
 
     }
 }
-
-#if DEBUG
-struct TextPreview: PreviewProvider {
-    static let config = ConfigText(
-        value:"\(UIFont.fontNames(forFamilyName: "Avenir").joined(separator: "\n"))" +  UIFont.familyNames.joined(separator: "\n")
-    )
-    static var previews: some View {
-        VStack {
-            config.toSwiftUI()
-                .foregroundColor(.white)
-                .background(Color.blue)
-        }
-    }
-}
-
-#endif

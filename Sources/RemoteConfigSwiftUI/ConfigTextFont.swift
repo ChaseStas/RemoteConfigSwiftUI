@@ -30,6 +30,7 @@ public struct ConfigTextFont {
             }
         }
 
+        #if !os(macOS)
         func toUIKit() -> UIFont.Weight {
             switch self {
             case .black: return .black
@@ -43,6 +44,7 @@ public struct ConfigTextFont {
             case .ultraLight: return .ultraLight
             }
         }
+        #endif
     }
 }
 

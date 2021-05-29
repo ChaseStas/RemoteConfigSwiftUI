@@ -1,4 +1,8 @@
+#if os(macOS)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension String {
     func getRGBA() -> (r: UInt8, b: UInt8, g: UInt8, a: UInt8)? {
