@@ -21,14 +21,15 @@ public struct ConfigText {
     }
 }
 
-extension ConfigText: Codable, Equatable, SwiftUIConfigurable {}
+extension ConfigText: Codable, Equatable {}
 
 public extension ConfigText {
-    func toSwiftUI() -> some View {
-        Text(value)
-            .font(font)
-            .foregroundColor(color?.toSwiftUI())
-            .multilineTextAlignment(multilineTextAlignment?.toSwiftUI())
+    func toSwiftUI(_ configure: (ConfigText) -> ConfigText = {$0}) -> some View {
+        let val = configure(self)
+        return Text(val.value)
+            .font(val.font)
+            .foregroundColor(val.color?.toSwiftUI())
+            .multilineTextAlignment(val.multilineTextAlignment?.toSwiftUI())
 
     }
 }
