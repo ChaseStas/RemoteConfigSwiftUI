@@ -6,6 +6,11 @@
         let textRawJson = "{ \"value\": \"Text value\"}"
         let decoder = JSONDecoder()
 
+        func testText() {
+            let value = try! decoder.decode(ConfigText.self, from: textRawJson.data(using: .utf8)!)
+            print(value)
+        }
+        
         func testHStack() {
             let rawJson = "{ \"spacing\": 10, \"value\": \(textRawJson)  }"
             let data = rawJson.data(using: .utf8)!

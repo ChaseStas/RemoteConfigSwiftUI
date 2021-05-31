@@ -3,6 +3,12 @@ import SwiftUI
 public struct ConfigZStack {
     var alignment: ConfigAlignment = .center
     let value: [SomeViewConfigurable]
+
+    public init(alignment: ConfigAlignment = .center,
+                value: [SomeViewConfigurable]) {
+        self.alignment = alignment
+        self.value = value
+    }
 }
 
 extension ConfigZStack: Codable {

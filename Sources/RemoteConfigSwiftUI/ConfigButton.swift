@@ -1,15 +1,13 @@
 import SwiftUI
 
 public struct ConfigButton {
-    public let value: String
+    public let value: SomeViewConfigurable
     public let color: ConfigColor?
     public let multilineTextAlignment: ConfigTextAlignment?
 
-    public init(
-        value: String,
-        color: ConfigColor? = nil,
-        multilineTextAlignment: ConfigTextAlignment? = nil
-    ) {
+    public init(value: SomeViewConfigurable,
+                color: ConfigColor? = nil,
+                multilineTextAlignment: ConfigTextAlignment? = nil) {
         self.value = value
         self.color = color
         self.multilineTextAlignment = multilineTextAlignment
@@ -19,9 +17,7 @@ public struct ConfigButton {
 extension ConfigButton: Codable, Equatable {}
 
 public extension ConfigButton {
-    func toSwiftUI() -> some View {
-        Button(action: {}, label: {
-            Text("Button")
-        })
+    func toSwiftUI(action: @escaping () -> ()) -> some View {
+        Button(action: action, label: value.toSwiftUI)
     }
 }

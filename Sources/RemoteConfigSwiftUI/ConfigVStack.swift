@@ -4,6 +4,14 @@ public struct ConfigVStack {
     var alignment: ConfigHorizontalAlignment = .center
     var spacing: CGFloat? = nil
     let value: [SomeViewConfigurable]
+
+    public init(alignment: ConfigHorizontalAlignment = .center,
+                spacing: CGFloat? = nil,
+                value: [SomeViewConfigurable]) {
+        self.alignment = alignment
+        self.spacing = spacing
+        self.value = value
+    }
 }
 
 extension ConfigVStack: Codable {

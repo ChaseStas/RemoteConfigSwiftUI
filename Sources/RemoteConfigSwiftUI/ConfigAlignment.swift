@@ -1,7 +1,6 @@
 import SwiftUI
 
 public enum ConfigAlignment: String {
-
     case bottom
     case bottomLeading
     case bottomTrailing
