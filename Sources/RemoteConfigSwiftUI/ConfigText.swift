@@ -28,7 +28,7 @@ public extension ConfigText {
         let val = configure(self)
         return Text(val.value)
             .font(val.font)
-            .foregroundColor(val.color?.toSwiftUI())
+            .configForegroundColor(val.color?.toSwiftUI())
             .multilineTextAlignment(val.multilineTextAlignment?.toSwiftUI())
 
     }

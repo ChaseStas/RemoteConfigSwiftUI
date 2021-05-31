@@ -18,5 +18,14 @@ extension View {
             self
         }
     }
+
+    @ViewBuilder
+    func configForegroundColor(_ value: Color?) -> some View {
+        if let value = value {
+            self.foregroundColor(value)
+        } else {
+            self
+        }
+    }
 }
 
