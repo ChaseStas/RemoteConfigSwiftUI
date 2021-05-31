@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 public struct ConfigText {
-    public let value: String
+    public var value: String
     public var color: ConfigColor? = nil
     public var multilineTextAlignment: ConfigTextAlignment? = nil
     public var padding: ConfigPadding? = nil
